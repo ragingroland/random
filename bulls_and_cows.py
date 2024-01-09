@@ -2,7 +2,6 @@ import random
 
 range_set = 4       # Длина загадываемого числа, по умолчанию - 4.
 list_of_numbers = []       # Переменные для списков и подсчета коров и быков.
-set_of_numbers = []
 cows = 0
 bulls = 0
 temp_number = []
@@ -13,10 +12,10 @@ class b_and_c:
     def NumberGenerator():
         global list_of_numbers
         def guessinglist_nr():  # Функция, которая добавляет случайные числа в количестве равном range_set.
-            while len(set_of_numbers) < range_set: # Добавляет неповторяющиеся числа.
+            while len(list_of_numbers) < range_set: # Добавляет неповторяющиеся числа.
                 digit = random.randint(1, 9)
-                if digit not in set_of_numbers:
-                    set_of_numbers.append(digit)
+                if digit not in list_of_numbers:
+                    list_of_numbers.append(digit)
         def guessinglist_r():
             while len(list_of_numbers) != range_set:  # Добавляются случайные числа
                 list_of_numbers.append(random.randint(1, 9))
@@ -24,7 +23,6 @@ class b_and_c:
             guessinglist_r()
         else:
             guessinglist_nr()
-            list_of_numbers = list(set_of_numbers)
         print('вывод списка для облегчения работы - ',list_of_numbers)
 
 
@@ -60,7 +58,6 @@ class b_and_c:
         number_check()
         if bulls == range_set: # Если число быков совпадает с длиной списка, то мы выиграли.
             if input('отгадал. заново? да/нет ') == 'да'.lower():
-                set_of_numbers = []
                 list_of_numbers = []
                 NumberGenerator()
                 cows = 0
