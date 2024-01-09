@@ -44,7 +44,6 @@ class b_and_c:
     while True:
         global cows
         global bulls
-        global set_of_numbers
         global list_of_numbers
         global score
         temp_number = [int(x) for x in input('ввод цифр через пробел - ').split()]
