@@ -3,7 +3,7 @@ import telebot
 import json
 from emoji import emojize
 
-bot = telebot.TeleBot('6397084988:AAF-xykJv9KfhkHexCUCGFaX4re0wfyeoB0')
+bot = telebot.TeleBot('token')
 
 user_data = {}
 with open('user_data.json', 'r', encoding = 'utf-8') as ud:
